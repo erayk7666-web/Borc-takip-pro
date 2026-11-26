@@ -30,11 +30,8 @@
 <section id="debtPage" class="page"><div class="section">Tüm Borçlar</div><div id="debtPageList"></div></section>
 </main>
 <nav class="bottom"><button class="nav active" onclick="showPage('homePage',this)">🏠<br>Ana Sayfa</button><button class="nav" onclick="showPage('debtPage',this)">💳<br>Borçlar</button><button class="nav" onclick="showPage('statsPage',this)">📊<br>İstatistik</button><button class="nav" onclick="showPage('paymentsPage',this)">🧾<br>Ödemeler</button><button class="nav" onclick="showPage('calendarPage',this)">📅<br>Takvim</button></nav>
-  <select id="languageSelect"
-  onchange="localStorage.setItem('borcCepLanguage', this.value); location.reload();"
-  style="position:relative;z-index:99999;margin-left:6px;padding:8px 6px;border:0;border-radius:12px;background:#fff;font-weight:700;">
 <select id="languageSelect"
-onchange="localStorage.setItem('borcCepLanguage', this.value); location.reload();"
+onchange="BorcCepLanguage.setLanguage(this.value)"
 style="position:absolute;right:8px;top:8px;z-index:99999;width:72px;height:36px;border:0;border-radius:10px;background:#fff;font-weight:700;font-size:12px;">
 <option value="tr">🇹🇷 TR</option>
 <option value="en">🇬🇧 EN</option>

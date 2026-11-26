@@ -612,12 +612,39 @@
   }
 
   function translateText(text) {
-    if (!text) return text;
-    const dictionary = translations[currentLanguage];
-    if (!dictionary) return text;
-    return Object.prototype.hasOwnProperty.call(dictionary, text)
-      ? dictionary[text]
-      : text;
+  if (!text) return text;
+
+  const dictionary = translations[currentLanguage];
+
+  if (!dictionary) return text;
+
+  // Önce birebir eşleşme
+  if (
+    Object.prototype.hasOwnProperty.call(
+      dictionary,
+      text
+    )
+  ) {
+    return dictionary[text];
+  }
+
+  // Sonra metnin içindeki Türkçe ifadeleri bulup değiştir
+  let result = text;
+
+  Object.keys(dictionary)
+    .sort(function (a, b) {
+      return b.length - a.length;
+    })
+    .forEach(function (turkish) {
+      if (!turkish) return;
+
+      result = result.split(turkish).join(
+        dictionary[turkish]
+      );
+    });
+
+  return result;
+  }
   }
 
   function translateNode(node) {

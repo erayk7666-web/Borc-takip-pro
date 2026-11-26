@@ -668,30 +668,113 @@
       node.setAttribute('title', translateText(original));
     }
   }
+function translatePage() {
+  if (!document.body || translating) return;
 
-  function translatePage() {
-    if (!document.body || translating) return;
+  translating = true;
 
-    translating = true;
-    try {
-      Array.from(document.body.childNodes).forEach(translateNode);
+  try {
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode: function (node) {
+          const parent = node.parentElement;
 
-      document.querySelectorAll('input, textarea').forEach(function (el) {
-        if (el.hasAttribute('placeholder')) {
-          const original = el.getAttribute('data-lang-placeholder-original') ||
-            el.getAttribute('placeholder');
+          if (!parent) return NodeFilter.FILTER_REJECT;
 
-          if (!el.hasAttribute('data-lang-placeholder-original')) {
-            el.setAttribute('data-lang-placeholder-original', original);
+          const tag = parent.tagName;
+
+          if (
+            tag === 'SCRIPT' ||
+            tag === 'STYLE' ||
+            tag === 'NOSCRIPT'
+          ) {
+            return NodeFilter.FILTER_REJECT;
           }
 
-          el.setAttribute('placeholder', translateText(original));
+          if (!node.nodeValue || !node.nodeValue.trim()) {
+            return NodeFilter.FILTER_REJECT;
+          }
+
+          return NodeFilter.FILTER_ACCEPT;
         }
-      });
-    } finally {
-      translating = false;
+      }
+    );
+
+    let node;
+
+    while ((node = walker.nextNode())) {
+      const text = node.nodeValue.trim();
+
+      if (!text) continue;
+
+      if (!node.parentElement.hasAttribute('data-lang-original')) {
+        node.parentElement.setAttribute(
+          'data-lang-original',
+          text
+        );
+      }
+
+      const original =
+        node.parentElement.getAttribute(
+          'data-lang-original'
+        );
+
+      const translated = translateText(original);
+
+      if (translated !== original) {
+        node.nodeValue =
+          node.nodeValue.replace(
+            text,
+            translated
+          );
+      } else if (currentLanguage === 'tr') {
+        node.nodeValue =
+          node.nodeValue.replace(
+            text,
+            original
+          );
+      }
     }
+
+    document
+      .querySelectorAll('input, textarea')
+      .forEach(function (el) {
+        if (!el.hasAttribute('placeholder')) return;
+
+        if (
+          !el.hasAttribute(
+            'data-lang-placeholder-original'
+          )
+        ) {
+          el.setAttribute(
+            'data-lang-placeholder-original',
+            el.getAttribute('placeholder')
+          );
+        }
+
+        const original =
+          el.getAttribute(
+            'data-lang-placeholder-original'
+          );
+
+        el.setAttribute(
+          'placeholder',
+          translateText(original)
+        );
+      });
+
+  } catch (error) {
+    console.error(
+      'BorçCep çeviri hatası:',
+      error
+    );
+  } finally {
+    translating = false;
   }
+}
+  
 
   function createLanguageButton() {
     if (document.getElementById('borcCepLanguageButton')) return;

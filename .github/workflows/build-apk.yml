@@ -1,0 +1,38 @@
+name: Android APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Kaynak kodunu indir
+        uses: actions/checkout@v4
+
+      - name: Node.js 22 kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Bağımlılıkları kur
+        run: npm install
+
+      - name: Android projesini oluştur
+        run: npx cap add android
+
+      - name: Capacitor'u senkronize et
+        run: npx cap sync android
+
+      - name: APK oluştur
+        run: |
+          chmod +x android/gradlew
+          cd android
+          ./gradlew assembleDebug
+
+      - name: APK'yı yükle
+        uses: actions/upload-artifact@v4
+        with:
+          name: Borc-Takip-Pro-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk

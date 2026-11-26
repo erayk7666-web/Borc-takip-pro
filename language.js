@@ -724,6 +724,7 @@
     });
 
     document.body.appendChild(button);
+    alert('DİL SİSTEMİ ÇALIŞIYOR');
   }
 
   function updateLanguageButton() {

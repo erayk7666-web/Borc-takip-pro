@@ -17,17 +17,7 @@
 <body>
 <div class="app">
 <header class="header"><div class="headerRow"><div><div class="logo">💰 BorçCep </div><div class="sub">Borçlarını ve ödemelerini kolayca takip et</div></div><button class="gear" onclick="openSettings()">⚙️</button></div></header>
-<div style="position:fixed;top:8px;right:8px;z-index:999999;">
-<select id="languageSelect" onchange="if(window.BorcCepLanguage){BorcCepLanguage.setLanguage(this.value)}" style="padding:7px 8px;border:0;border-radius:10px;background:#fff;font-weight:700;font-size:12px;box-shadow:0 2px 8px rgba(0,0,0,.15);">
-<option value="tr">🇹🇷 TR</option>
-<option value="en">🇬🇧 EN</option>
-<option value="de">🇩🇪 DE</option>
-<option value="fr">🇫🇷 FR</option>
-<option value="es">🇪🇸 ES</option>
-<option value="it">🇮🇹 IT</option>
-<option value="ru">🇷🇺 RU</option>
-</select>
-</div>
+
 <main class="container">
 <section id="homePage" class="page active">
 <div class="summary"><div class="card"><div class="label">Toplam Borç</div><div id="total" class="value">₺0</div></div><div class="card"><div class="label">Kalan Borç</div><div id="remaining" class="value red">₺0</div></div></div>

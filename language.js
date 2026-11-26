@@ -9,20 +9,26 @@
     de: { name: 'Deutsch', flag: '🇩🇪', dir: 'ltr' },
     fr: { name: 'Français', flag: '🇫🇷', dir: 'ltr' },
     es: { name: 'Español', flag: '🇪🇸', dir: 'ltr' },
-    ru: { name: 'Русский', flag: '🇷🇺', dir: 'ltr' },
-    ar: { name: 'العربية', flag: '🇸🇦', dir: 'rtl' }
+    it: { name: 'Italiano', flag: '🇮🇹', dir: 'ltr' },
+    ru: { name: 'Русский', flag: '🇷🇺', dir: 'ltr' }
   };
 
   const translations = {
 
     en: {
+      'Borç Takip Pro': 'Debt Tracker Pro',
+      'BorçCep': 'BorçCep',
       'Borçlarını ve ödemelerini kolayca takip et': 'Easily track your debts and payments',
+
       'Toplam Borç': 'Total Debt',
       'Kalan Borç': 'Remaining Debt',
       'Genel İlerleme': 'Overall Progress',
       'Yeni Borç Ekle': 'Add New Debt',
       '＋ Yeni Borç Ekle': '＋ Add New Debt',
       'Borçlarım': 'My Debts',
+      'Henüz borç eklenmedi.': 'No debts have been added yet.',
+      'Yukarıdaki butondan ilk borcunu ekleyebilirsin.': 'You can add your first debt using the button above.',
+
       'Profesyonel İstatistikler': 'Professional Statistics',
       'Toplam': 'Total',
       'Ödenen': 'Paid',
@@ -30,21 +36,42 @@
       'Borç Sayısı': 'Number of Debts',
       'Borç Dağılımı': 'Debt Distribution',
       'Borç Tutarları': 'Debt Amounts',
+
       'Ödeme Geçmişi': 'Payment History',
       'Filtrele': 'Filter',
       'Borç': 'Debt',
       'Tarih': 'Date',
       'Tutar': 'Amount',
       'Henüz ödeme yok.': 'No payments yet.',
+
       'Gelişmiş Ödeme Takvimi': 'Advanced Payment Calendar',
       'Yaklaşan Ödemeler': 'Upcoming Payments',
       'Tüm Borçlar': 'All Debts',
+
       'Ana Sayfa': 'Home',
+      'Borçlar': 'Debts',
       'İstatistik': 'Statistics',
       'Ödemeler': 'Payments',
       'Takvim': 'Calendar',
-      'Borçlar': 'Debts',
+
       'Ayarlar': 'Settings',
+      'Ayarlar & Yedekleme': 'Settings & Backup',
+      'Karanlık tema': 'Dark mode',
+      'Uygulamanın görünümünü değiştir.': 'Change the appearance of the application.',
+      'Telefon bildirimleri': 'Phone notifications',
+      'Yaklaşan ödemeler için tarayıcı bildirim izni.': 'Browser notification permission for upcoming payments.',
+      'İzin Ver': 'Allow',
+      'PIN kilidi': 'PIN lock',
+      'PIN ayarlı': 'PIN configured',
+      'Değiştir': 'Change',
+      'Otomatik yedekleme': 'Automatic backup',
+      'Değişikliklerde yerel yedek oluşturur.': 'Creates a local backup when changes are made.',
+      'Bildirim hatırlatma süresi': 'Notification reminder period',
+      '1 gün önce': '1 day before',
+      'Yedek Dosyası Al': 'Download Backup',
+      'Yedeği Geri Yükle': 'Restore Backup',
+      'Tüm Verileri Sil': 'Delete All Data',
+
       'Borç adı': 'Debt name',
       'Toplam borç (₺)': 'Total debt (₺)',
       'Aylık taksit (₺)': 'Monthly installment (₺)',
@@ -58,16 +85,10 @@
       'Ödemeyi Kaydet': 'Save Payment',
       'Ödemeyi Düzenle': 'Edit Payment',
       'Güncelle': 'Update',
-      'Uygulamanın kilidini açmak için PIN gir.': 'Enter your PIN to unlock the application.',
-      'Kilidi Aç': 'Unlock',
-      'Borç kaydedildi.': 'Debt saved.',
-      'Borç silindi.': 'Debt deleted.',
-      'Ödeme kaydedildi.': 'Payment saved.',
-      'Ödeme kaydı silindi.': 'Payment record deleted.',
+
       'Ödeme tutarı': 'Payment amount',
       'Aylık taksit': 'Monthly installment',
       'İlk ödeme': 'First payment',
-      'Borç adı': 'Debt name',
       'Henüz borç yok.': 'No debts yet.',
       'Ödenen Tutar': 'Paid Amount',
       'Kalan Tutar': 'Remaining Amount',
@@ -76,24 +97,46 @@
       'Devam Ediyor': 'In Progress',
       'Bekliyor': 'Pending',
       'Ödeme': 'Payment',
-      'Ödemeler': 'Payments',
       'Sil': 'Delete',
       'Düzenle': 'Edit',
       'Detay': 'Details',
       'Kapat': 'Close',
       'Evet': 'Yes',
       'Hayır': 'No',
-      'Vazgeç': 'Cancel'
+
+      'Uygulamanın kilidini açmak için PIN gir.': 'Enter your PIN to unlock the application.',
+      'Kilidi Aç': 'Unlock',
+      'Borç kaydedildi.': 'Debt saved.',
+      'Borç silindi.': 'Debt deleted.',
+      'Ödeme kaydedildi.': 'Payment saved.',
+      'Ödeme kaydı silindi.': 'Payment record deleted.',
+
+      'Borç adı, toplam borç ve aylık taksit gir.': 'Enter the debt name, total debt and monthly installment.',
+      'Geçersiz ödeme tutarı.': 'Invalid payment amount.',
+      'Toplam borç ödenenden düşük olamaz.': 'Total debt cannot be lower than the amount already paid.',
+      'Bu borç silinsin mi?': 'Delete this debt?',
+      'Bu ödeme silinsin mi?': 'Delete this payment?',
+      'Tüm borçlar ve ödeme kayıtları silinsin mi?': 'Delete all debts and payment records?',
+
+      'Android/PWA altyapısı bu pakette hazır.': 'Android/PWA infrastructure is ready in this package.',
+      'Gerçek arka plan push bildirimleri için yayınlanmış HTTPS adresi ve push sunucusu gerekir.': 'Real background push notifications require a published HTTPS address and a push server.',
+      'tarayıcı izin sistemi tek başına kapalı uygulamada zamanlanmış bildirim garantilemez.': 'The browser permission system alone cannot guarantee scheduled notifications when the application is closed.'
     },
 
     de: {
+      'Borç Takip Pro': 'Schulden-Tracker Pro',
+      'BorçCep': 'BorçCep',
       'Borçlarını ve ödemelerini kolayca takip et': 'Verfolge deine Schulden und Zahlungen einfach',
+
       'Toplam Borç': 'Gesamtschulden',
       'Kalan Borç': 'Verbleibende Schulden',
       'Genel İlerleme': 'Gesamtfortschritt',
       'Yeni Borç Ekle': 'Neue Schuld hinzufügen',
       '＋ Yeni Borç Ekle': '＋ Neue Schuld hinzufügen',
       'Borçlarım': 'Meine Schulden',
+      'Henüz borç eklenmedi.': 'Noch keine Schulden hinzugefügt.',
+      'Yukarıdaki butondan ilk borcunu ekleyebilirsin.': 'Du kannst oben deine erste Schuld hinzufügen.',
+
       'Profesyonel İstatistikler': 'Professionelle Statistiken',
       'Toplam': 'Gesamt',
       'Ödenen': 'Bezahlt',
@@ -101,21 +144,42 @@
       'Borç Sayısı': 'Anzahl der Schulden',
       'Borç Dağılımı': 'Schuldenverteilung',
       'Borç Tutarları': 'Schuldbeträge',
+
       'Ödeme Geçmişi': 'Zahlungsverlauf',
       'Filtrele': 'Filtern',
       'Borç': 'Schuld',
       'Tarih': 'Datum',
       'Tutar': 'Betrag',
       'Henüz ödeme yok.': 'Noch keine Zahlungen.',
+
       'Gelişmiş Ödeme Takvimi': 'Erweiterter Zahlungskalender',
       'Yaklaşan Ödemeler': 'Anstehende Zahlungen',
       'Tüm Borçlar': 'Alle Schulden',
+
       'Ana Sayfa': 'Startseite',
+      'Borçlar': 'Schulden',
       'İstatistik': 'Statistik',
       'Ödemeler': 'Zahlungen',
       'Takvim': 'Kalender',
-      'Borçlar': 'Schulden',
+
       'Ayarlar': 'Einstellungen',
+      'Ayarlar & Yedekleme': 'Einstellungen & Sicherung',
+      'Karanlık tema': 'Dunkler Modus',
+      'Uygulamanın görünümünü değiştir.': 'Ändere das Erscheinungsbild der Anwendung.',
+      'Telefon bildirimleri': 'Telefonbenachrichtigungen',
+      'Yaklaşan ödemeler için tarayıcı bildirim izni.': 'Berechtigung für Browser-Benachrichtigungen zu bevorstehenden Zahlungen.',
+      'İzin Ver': 'Erlauben',
+      'PIN kilidi': 'PIN-Sperre',
+      'PIN ayarlı': 'PIN eingerichtet',
+      'Değiştir': 'Ändern',
+      'Otomatik yedekleme': 'Automatische Sicherung',
+      'Değişikliklerde yerel yedek oluşturur.': 'Erstellt bei Änderungen eine lokale Sicherung.',
+      'Bildirim hatırlatma süresi': 'Erinnerungszeitraum',
+      '1 gün önce': '1 Tag vorher',
+      'Yedek Dosyası Al': 'Sicherung herunterladen',
+      'Yedeği Geri Yükle': 'Sicherung wiederherstellen',
+      'Tüm Verileri Sil': 'Alle Daten löschen',
+
       'Borç adı': 'Name der Schuld',
       'Toplam borç (₺)': 'Gesamtschuld (₺)',
       'Aylık taksit (₺)': 'Monatliche Rate (₺)',
@@ -129,6 +193,26 @@
       'Ödemeyi Kaydet': 'Zahlung speichern',
       'Ödemeyi Düzenle': 'Zahlung bearbeiten',
       'Güncelle': 'Aktualisieren',
+
+      'Ödeme tutarı': 'Zahlungsbetrag',
+      'Aylık taksit': 'Monatliche Rate',
+      'İlk ödeme': 'Erste Zahlung',
+      'Henüz borç yok.': 'Noch keine Schulden.',
+      'Ödenen Tutar': 'Bezahlter Betrag',
+      'Kalan Tutar': 'Verbleibender Betrag',
+      'Durum': 'Status',
+      'Tamamlandı': 'Abgeschlossen',
+      'Devam Ediyor': 'Läuft',
+      'Bekliyor': 'Ausstehend',
+      'Ödeme': 'Zahlung',
+      'Sil': 'Löschen',
+      'Düzenle': 'Bearbeiten',
+      'Detay': 'Details',
+      'Kapat': 'Schließen',
+      'Evet': 'Ja',
+      'Hayır': 'Nein',
+
+      'Uygulamanın kilidini açmak için PIN gir.': 'Gib deine PIN ein, um die Anwendung zu entsperren.',
       'Kilidi Aç': 'Entsperren',
       'Borç kaydedildi.': 'Schuld gespeichert.',
       'Borç silindi.': 'Schuld gelöscht.',
@@ -137,13 +221,19 @@
     },
 
     fr: {
+      'Borç Takip Pro': 'Suivi des dettes Pro',
+      'BorçCep': 'BorçCep',
       'Borçlarını ve ödemelerini kolayca takip et': 'Suivez facilement vos dettes et vos paiements',
+
       'Toplam Borç': 'Dette totale',
       'Kalan Borç': 'Dette restante',
       'Genel İlerleme': 'Progression générale',
       'Yeni Borç Ekle': 'Ajouter une dette',
       '＋ Yeni Borç Ekle': '＋ Ajouter une dette',
       'Borçlarım': 'Mes dettes',
+      'Henüz borç eklenmedi.': 'Aucune dette ajoutée.',
+      'Yukarıdaki butondan ilk borcunu ekleyebilirsin.': 'Ajoutez votre première dette avec le bouton ci-dessus.',
+
       'Profesyonel İstatistikler': 'Statistiques professionnelles',
       'Toplam': 'Total',
       'Ödenen': 'Payé',
@@ -151,21 +241,42 @@
       'Borç Sayısı': 'Nombre de dettes',
       'Borç Dağılımı': 'Répartition des dettes',
       'Borç Tutarları': 'Montants des dettes',
+
       'Ödeme Geçmişi': 'Historique des paiements',
       'Filtrele': 'Filtrer',
       'Borç': 'Dette',
       'Tarih': 'Date',
       'Tutar': 'Montant',
       'Henüz ödeme yok.': 'Aucun paiement pour le moment.',
+
       'Gelişmiş Ödeme Takvimi': 'Calendrier de paiement avancé',
       'Yaklaşan Ödemeler': 'Paiements à venir',
       'Tüm Borçlar': 'Toutes les dettes',
+
       'Ana Sayfa': 'Accueil',
+      'Borçlar': 'Dettes',
       'İstatistik': 'Statistiques',
       'Ödemeler': 'Paiements',
       'Takvim': 'Calendrier',
-      'Borçlar': 'Dettes',
+
       'Ayarlar': 'Paramètres',
+      'Ayarlar & Yedekleme': 'Paramètres & sauvegarde',
+      'Karanlık tema': 'Mode sombre',
+      'Uygulamanın görünümünü değiştir.': 'Modifier l’apparence de l’application.',
+      'Telefon bildirimleri': 'Notifications du téléphone',
+      'Yaklaşan ödemeler için tarayıcı bildirim izni.': 'Autorisation des notifications du navigateur pour les paiements à venir.',
+      'İzin Ver': 'Autoriser',
+      'PIN kilidi': 'Verrouillage PIN',
+      'PIN ayarlı': 'PIN configuré',
+      'Değiştir': 'Modifier',
+      'Otomatik yedekleme': 'Sauvegarde automatique',
+      'Değişikliklerde yerel yedek oluşturur.': 'Crée une sauvegarde locale lors des modifications.',
+      'Bildirim hatırlatma süresi': 'Délai de rappel',
+      '1 gün önce': '1 jour avant',
+      'Yedek Dosyası Al': 'Télécharger la sauvegarde',
+      'Yedeği Geri Yükle': 'Restaurer la sauvegarde',
+      'Tüm Verileri Sil': 'Supprimer toutes les données',
+
       'Borç adı': 'Nom de la dette',
       'Toplam borç (₺)': 'Dette totale (₺)',
       'Aylık taksit (₺)': 'Mensualité (₺)',
@@ -179,6 +290,26 @@
       'Ödemeyi Kaydet': 'Enregistrer le paiement',
       'Ödemeyi Düzenle': 'Modifier le paiement',
       'Güncelle': 'Mettre à jour',
+
+      'Ödeme tutarı': 'Montant du paiement',
+      'Aylık taksit': 'Mensualité',
+      'İlk ödeme': 'Premier paiement',
+      'Henüz borç yok.': 'Aucune dette.',
+      'Ödenen Tutar': 'Montant payé',
+      'Kalan Tutar': 'Montant restant',
+      'Durum': 'Statut',
+      'Tamamlandı': 'Terminé',
+      'Devam Ediyor': 'En cours',
+      'Bekliyor': 'En attente',
+      'Ödeme': 'Paiement',
+      'Sil': 'Supprimer',
+      'Düzenle': 'Modifier',
+      'Detay': 'Détails',
+      'Kapat': 'Fermer',
+      'Evet': 'Oui',
+      'Hayır': 'Non',
+
+      'Uygulamanın kilidini açmak için PIN gir.': 'Entrez votre PIN pour déverrouiller l’application.',
       'Kilidi Aç': 'Déverrouiller',
       'Borç kaydedildi.': 'Dette enregistrée.',
       'Borç silindi.': 'Dette supprimée.',
@@ -187,13 +318,19 @@
     },
 
     es: {
+      'Borç Takip Pro': 'Gestor de Deudas Pro',
+      'BorçCep': 'BorçCep',
       'Borçlarını ve ödemelerini kolayca takip et': 'Controla fácilmente tus deudas y pagos',
+
       'Toplam Borç': 'Deuda total',
       'Kalan Borç': 'Deuda restante',
       'Genel İlerleme': 'Progreso general',
       'Yeni Borç Ekle': 'Añadir deuda',
       '＋ Yeni Borç Ekle': '＋ Añadir deuda',
       'Borçlarım': 'Mis deudas',
+      'Henüz borç eklenmedi.': 'Aún no se han añadido deudas.',
+      'Yukarıdaki butondan ilk borcunu ekleyebilirsin.': 'Puedes añadir tu primera deuda con el botón de arriba.',
+
       'Profesyonel İstatistikler': 'Estadísticas profesionales',
       'Toplam': 'Total',
       'Ödenen': 'Pagado',
@@ -201,21 +338,40 @@
       'Borç Sayısı': 'Número de deudas',
       'Borç Dağılımı': 'Distribución de deudas',
       'Borç Tutarları': 'Importes de deuda',
+
       'Ödeme Geçmişi': 'Historial de pagos',
       'Filtrele': 'Filtrar',
       'Borç': 'Deuda',
       'Tarih': 'Fecha',
       'Tutar': 'Importe',
       'Henüz ödeme yok.': 'Aún no hay pagos.',
+
       'Gelişmiş Ödeme Takvimi': 'Calendario de pagos avanzado',
       'Yaklaşan Ödemeler': 'Próximos pagos',
       'Tüm Borçlar': 'Todas las deudas',
+
       'Ana Sayfa': 'Inicio',
+      'Borçlar': 'Deudas',
       'İstatistik': 'Estadísticas',
       'Ödemeler': 'Pagos',
       'Takvim': 'Calendario',
-      'Borçlar': 'Deudas',
+
       'Ayarlar': 'Configuración',
+      'Ayarlar & Yedekleme': 'Configuración y copia de seguridad',
+      'Karanlık tema': 'Modo oscuro',
+      'Uygulamanın görünümünü değiştir.': 'Cambia el aspecto de la aplicación.',
+      'Telefon bildirimleri': 'Notificaciones del teléfono',
+      'İzin Ver': 'Permitir',
+      'PIN kilidi': 'Bloqueo PIN',
+      'PIN ayarlı': 'PIN configurado',
+      'Değiştir': 'Cambiar',
+      'Otomatik yedekleme': 'Copia de seguridad automática',
+      'Bildirim hatırlatma süresi': 'Tiempo de recordatorio',
+      '1 gün önce': '1 día antes',
+      'Yedek Dosyası Al': 'Descargar copia de seguridad',
+      'Yedeği Geri Yükle': 'Restaurar copia de seguridad',
+      'Tüm Verileri Sil': 'Eliminar todos los datos',
+
       'Borç adı': 'Nombre de la deuda',
       'Toplam borç (₺)': 'Deuda total (₺)',
       'Aylık taksit (₺)': 'Cuota mensual (₺)',
@@ -229,6 +385,26 @@
       'Ödemeyi Kaydet': 'Guardar pago',
       'Ödemeyi Düzenle': 'Editar pago',
       'Güncelle': 'Actualizar',
+
+      'Ödeme tutarı': 'Importe del pago',
+      'Aylık taksit': 'Cuota mensual',
+      'İlk ödeme': 'Primer pago',
+      'Henüz borç yok.': 'Aún no hay deudas.',
+      'Ödenen Tutar': 'Importe pagado',
+      'Kalan Tutar': 'Importe restante',
+      'Durum': 'Estado',
+      'Tamamlandı': 'Completado',
+      'Devam Ediyor': 'En progreso',
+      'Bekliyor': 'Pendiente',
+      'Ödeme': 'Pago',
+      'Sil': 'Eliminar',
+      'Düzenle': 'Editar',
+      'Detay': 'Detalles',
+      'Kapat': 'Cerrar',
+      'Evet': 'Sí',
+      'Hayır': 'No',
+
+      'Uygulamanın kilidini açmak için PIN gir.': 'Introduce tu PIN para desbloquear la aplicación.',
       'Kilidi Aç': 'Desbloquear',
       'Borç kaydedildi.': 'Deuda guardada.',
       'Borç silindi.': 'Deuda eliminada.',
@@ -236,281 +412,108 @@
       'Ödeme kaydı silindi.': 'Pago eliminado.'
     },
 
+    it: {
+      'Borç Takip Pro': 'Gestione Debiti Pro',
+      'BorçCep': 'BorçCep',
+      'Borçlarını ve ödemelerini kolayca takip et': 'Gestisci facilmente i tuoi debiti e pagamenti',
+
+      'Toplam Borç': 'Debito totale',
+      'Kalan Borç': 'Debito rimanente',
+      'Genel İlerleme': 'Progresso generale',
+      'Yeni Borç Ekle': 'Aggiungi debito',
+      '＋ Yeni Borç Ekle': '＋ Aggiungi debito',
+      'Borçlarım': 'I miei debiti',
+      'Henüz borç eklenmedi.': 'Nessun debito aggiunto.',
+      'Yukarıdaki butondan ilk borcunu ekleyebilirsin.': 'Puoi aggiungere il tuo primo debito con il pulsante sopra.',
+
+      'Profesyonel İstatistikler': 'Statistiche professionali',
+      'Toplam': 'Totale',
+      'Ödenen': 'Pagato',
+      'Kalan': 'Rimanente',
+      'Borç Sayısı': 'Numero di debiti',
+      'Borç Dağılımı': 'Distribuzione dei debiti',
+      'Borç Tutarları': 'Importi dei debiti',
+
+      'Ödeme Geçmişi': 'Cronologia dei pagamenti',
+      'Filtrele': 'Filtra',
+      'Borç': 'Debito',
+      'Tarih': 'Data',
+      'Tutar': 'Importo',
+      'Henüz ödeme yok.': 'Nessun pagamento ancora.',
+
+      'Gelişmiş Ödeme Takvimi': 'Calendario dei pagamenti avanzato',
+      'Yaklaşan Ödemeler': 'Prossimi pagamenti',
+      'Tüm Borçlar': 'Tutti i debiti',
+
+      'Ana Sayfa': 'Home',
+      'Borçlar': 'Debiti',
+      'İstatistik': 'Statistiche',
+      'Ödemeler': 'Pagamenti',
+      'Takvim': 'Calendario',
+
+      'Ayarlar': 'Impostazioni',
+      'Ayarlar & Yedekleme': 'Impostazioni e backup',
+      'Karanlık tema': 'Modalità scura',
+      'Uygulamanın görünümünü değiştir.': 'Modifica l’aspetto dell’applicazione.',
+      'Telefon bildirimleri': 'Notifiche del telefono',
+      'İzin Ver': 'Consenti',
+      'PIN kilidi': 'Blocco PIN',
+      'PIN ayarlı': 'PIN configurato',
+      'Değiştir': 'Modifica',
+      'Otomatik yedekleme': 'Backup automatico',
+      'Bildirim hatırlatma süresi': 'Periodo di promemoria',
+      '1 gün önce': '1 giorno prima',
+      'Yedek Dosyası Al': 'Scarica backup',
+      'Yedeği Geri Yükle': 'Ripristina backup',
+      'Tüm Verileri Sil': 'Elimina tutti i dati',
+
+      'Borç adı': 'Nome del debito',
+      'Toplam borç (₺)': 'Debito totale (₺)',
+      'Aylık taksit (₺)': 'Rata mensile (₺)',
+      'İlk ödeme tarihi': 'Data del primo pagamento',
+      'Vazgeç': 'Annulla',
+      'Kaydet': 'Salva',
+      'Borcu Düzenle': 'Modifica debito',
+      'Ödeme Yap': 'Effettua pagamento',
+      'Ödeme tutarı (₺)': 'Importo del pagamento (₺)',
+      'Ödeme tarihi': 'Data del pagamento',
+      'Ödemeyi Kaydet': 'Salva pagamento',
+      'Ödemeyi Düzenle': 'Modifica pagamento',
+      'Güncelle': 'Aggiorna',
+
+      'Ödeme tutarı': 'Importo del pagamento',
+      'Aylık taksit': 'Rata mensile',
+      'İlk ödeme': 'Primo pagamento',
+      'Henüz borç yok.': 'Nessun debito.',
+      'Ödenen Tutar': 'Importo pagato',
+      'Kalan Tutar': 'Importo rimanente',
+      'Durum': 'Stato',
+      'Tamamlandı': 'Completato',
+      'Devam Ediyor': 'In corso',
+      'Bekliyor': 'In attesa',
+      'Ödeme': 'Pagamento',
+      'Sil': 'Elimina',
+      'Düzenle': 'Modifica',
+      'Detay': 'Dettagli',
+      'Kapat': 'Chiudi',
+      'Evet': 'Sì',
+      'Hayır': 'No',
+
+      'Uygulamanın kilidini açmak için PIN gir.': 'Inserisci il PIN per sbloccare l’applicazione.',
+      'Kilidi Aç': 'Sblocca',
+      'Borç kaydedildi.': 'Debito salvato.',
+      'Borç silindi.': 'Debito eliminato.',
+      'Ödeme kaydedildi.': 'Pagamento salvato.',
+      'Ödeme kaydı silindi.': 'Pagamento eliminato.'
+    },
+
     ru: {
+      'Borç Takip Pro': 'Учет долгов Pro',
+      'BorçCep': 'BorçCep',
       'Borçlarını ve ödemelerini kolayca takip et': 'Легко отслеживайте свои долги и платежи',
+
       'Toplam Borç': 'Общий долг',
       'Kalan Borç': 'Оставшийся долг',
       'Genel İlerleme': 'Общий прогресс',
       'Yeni Borç Ekle': 'Добавить долг',
-      '＋ Yeni Borç Ekle': '＋ Добавить долг',
-      'Borçlarım': 'Мои долги',
-      'Profesyonel İstatistikler': 'Профессиональная статистика',
-      'Toplam': 'Всего',
-      'Ödenen': 'Оплачено',
-      'Kalan': 'Осталось',
-      'Borç Sayısı': 'Количество долгов',
-      'Borç Dağılımı': 'Распределение долгов',
-      'Borç Tutarları': 'Суммы долгов',
-      'Ödeme Geçmişi': 'История платежей',
-      'Filtrele': 'Фильтр',
-      'Borç': 'Долг',
-      'Tarih': 'Дата',
-      'Tutar': 'Сумма',
-      'Henüz ödeme yok.': 'Платежей пока нет.',
-      'Gelişmiş Ödeme Takvimi': 'Расширенный календарь платежей',
-      'Yaklaşan Ödemeler': 'Предстоящие платежи',
-      'Tüm Borçlar': 'Все долги',
-      'Ana Sayfa': 'Главная',
-      'İstatistik': 'Статистика',
-      'Ödemeler': 'Платежи',
-      'Takvim': 'Календарь',
-      'Borçlar': 'Долги',
-      'Ayarlar': 'Настройки',
-      'Borç adı': 'Название долга',
-      'Toplam borç (₺)': 'Общий долг (₺)',
-      'Aylık taksit (₺)': 'Ежемесячный платеж (₺)',
-      'İlk ödeme tarihi': 'Дата первого платежа',
-      'Vazgeç': 'Отмена',
-      'Kaydet': 'Сохранить',
-      'Borcu Düzenle': 'Изменить долг',
-      'Ödeme Yap': 'Внести платеж',
-      'Ödeme tutarı (₺)': 'Сумма платежа (₺)',
-      'Ödeme tarihi': 'Дата платежа',
-      'Ödemeyi Kaydet': 'Сохранить платеж',
-      'Ödemeyi Düzenle': 'Изменить платеж',
-      'Güncelle': 'Обновить',
-      'Kilidi Aç': 'Разблокировать',
-      'Borç kaydedildi.': 'Долг сохранён.',
-      'Borç silindi.': 'Долг удалён.',
-      'Ödeme kaydedildi.': 'Платёж сохранён.',
-      'Ödeme kaydı silindi.': 'Платёж удалён.'
-    },
-
-    ar: {
-      'Borçlarını ve ödemelerini kolayca takip et': 'تتبع ديونك ومدفوعاتك بسهولة',
-      'Toplam Borç': 'إجمالي الديون',
-      'Kalan Borç': 'الديون المتبقية',
-      'Genel İlerleme': 'التقدم العام',
-      'Yeni Borç Ekle': 'إضافة دين جديد',
-      '＋ Yeni Borç Ekle': '＋ إضافة دين جديد',
-      'Borçlarım': 'ديوني',
-      'Profesyonel İstatistikler': 'إحصائيات احترافية',
-      'Toplam': 'الإجمالي',
-      'Ödenen': 'المدفوع',
-      'Kalan': 'المتبقي',
-      'Borç Sayısı': 'عدد الديون',
-      'Borç Dağılımı': 'توزيع الديون',
-      'Borç Tutarları': 'مبالغ الديون',
-      'Ödeme Geçmişi': 'سجل المدفوعات',
-      'Filtrele': 'تصفية',
-      'Borç': 'الدين',
-      'Tarih': 'التاريخ',
-      'Tutar': 'المبلغ',
-      'Henüz ödeme yok.': 'لا توجد مدفوعات حتى الآن.',
-      'Gelişmiş Ödeme Takvimi': 'تقويم المدفوعات المتقدم',
-      'Yaklaşan Ödemeler': 'المدفوعات القادمة',
-      'Tüm Borçlar': 'جميع الديون',
-      'Ana Sayfa': 'الرئيسية',
-      'İstatistik': 'الإحصائيات',
-      'Ödemeler': 'المدفوعات',
-      'Takvim': 'التقويم',
-      'Borçlar': 'الديون',
-      'Ayarlar': 'الإعدادات',
-      'Borç adı': 'اسم الدين',
-      'Toplam borç (₺)': 'إجمالي الدين (₺)',
-      'Aylık taksit (₺)': 'القسط الشهري (₺)',
-      'İlk ödeme tarihi': 'تاريخ أول دفعة',
-      'Vazgeç': 'إلغاء',
-      'Kaydet': 'حفظ',
-      'Borcu Düzenle': 'تعديل الدين',
-      'Ödeme Yap': 'إجراء دفعة',
-      'Ödeme tutarı (₺)': 'مبلغ الدفعة (₺)',
-      'Ödeme tarihi': 'تاريخ الدفع',
-      'Ödemeyi Kaydet': 'حفظ الدفعة',
-      'Ödemeyi Düzenle': 'تعديل الدفعة',
-      'Güncelle': 'تحديث',
-      'Kilidi Aç': 'فتح القفل',
-      'Borç kaydedildi.': 'تم حفظ الدين.',
-      'Borç silindi.': 'تم حذف الدين.',
-      'Ödeme kaydedildi.': 'تم حفظ الدفعة.',
-      'Ödeme kaydı silindi.': 'تم حذف الدفعة.'
-    }
-
-  };
-
-  let currentLang = localStorage.getItem(LANG_KEY) || 'tr';
-
-  if (!LANGUAGES[currentLang]) {
-    currentLang = 'tr';
-  }
-
-  function translateText(text) {
-    if (currentLang === 'tr') return text;
-
-    let result = text;
-
-    const dictionary = translations[currentLang] || {};
-
-    Object.keys(dictionary)
-      .sort((a, b) => b.length - a.length)
-      .forEach(function (key) {
-        result = result.split(key).join(dictionary[key]);
-      });
-
-    return result;
-  }
-
-  function translateNode(node) {
-    if (!node) return;
-
-    if (node.nodeType === Node.TEXT_NODE) {
-      if (node.textContent.trim()) {
-        node.textContent = translateText(node.textContent);
-      }
-      return;
-    }
-
-    if (node.nodeType !== Node.ELEMENT_NODE) return;
-
-    if (node.hasAttribute('placeholder')) {
-      node.setAttribute(
-        'placeholder',
-        translateText(node.getAttribute('placeholder'))
-      );
-    }
-
-    if (node.hasAttribute('title')) {
-      node.setAttribute(
-        'title',
-        translateText(node.getAttribute('title'))
-      );
-    }
-
-    node.childNodes.forEach(translateNode);
-  }
-
-  function translatePage() {
-    document.body.childNodes.forEach(translateNode);
-
-    document.documentElement.lang = currentLang;
-    document.documentElement.dir = LANGUAGES[currentLang].dir;
-
-    updateLanguageButton();
-  }
-
-  function createLanguageButton() {
-
-    if (document.getElementById('languageButton')) return;
-
-    const button = document.createElement('button');
-
-    button.id = 'languageButton';
-
-    button.style.cssText = `
-      position:fixed;
-      top:14px;
-      right:68px;
-      z-index:9999;
-      border:0;
-      border-radius:12px;
-      padding:9px 12px;
-      background:#ffffff;
-      color:#0f172a;
-      font-size:12px;
-      font-weight:800;
-      box-shadow:0 4px 14px #0002;
-      cursor:pointer;
-    `;
-
-    button.onclick = function () {
-      openLanguageMenu();
-    };
-
-    document.body.appendChild(button);
-
-    updateLanguageButton();
-  }
-
-  function updateLanguageButton() {
-
-    const button = document.getElementById('languageButton');
-
-    if (!button) return;
-
-    button.textContent =
-      LANGUAGES[currentLang].flag +
-      ' ' +
-      currentLang.toUpperCase();
-  }
-
-  function openLanguageMenu() {
-
-    const old = document.getElementById('languageMenu');
-
-    if (old) {
-      old.remove();
-      return;
-    }
-
-    const menu = document.createElement('div');
-
-    menu.id = 'languageMenu';
-
-    menu.style.cssText = `
-      position:fixed;
-      top:60px;
-      right:14px;
-      z-index:10000;
-      width:190px;
-      background:#ffffff;
-      border-radius:16px;
-      padding:8px;
-      box-shadow:0 10px 35px #0003;
-      border:1px solid #e5e7eb;
-    `;
-
-    Object.keys(LANGUAGES).forEach(function (code) {
-
-      const lang = LANGUAGES[code];
-
-      const item = document.createElement('button');
-
-      item.style.cssText = `
-        width:100%;
-        border:0;
-        background:${code === currentLang ? '#eef2ff' : 'transparent'};
-        color:#111827;
-        padding:11px;
-        border-radius:10px;
-        text-align:left;
-        font-weight:700;
-        cursor:pointer;
-        font-size:13px;
-      `;
-
-      item.textContent =
-        lang.flag + '  ' +
-        lang.name +
-        (code === currentLang ? ' ✓' : '');
-
-      item.onclick = function () {
-
-        currentLang = code;
-
-        localStorage.setItem(
-          LANG_KEY,
-          currentLang
-        );
-
-        location.reload();
-      };
-
-      menu.appendChild(item);
-    });
-
-    document.body.appendChild(menu);
-  }
-
-  function startObserver() {
-
-    const observer =
+      '＋ Yeni Borç 

@@ -1,4 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
 body {
-  margin: 20px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    padding-top: max(24px, env(safe-area-inset-top));
+    padding-bottom: env(safe-area-inset-bottom);
 }
           

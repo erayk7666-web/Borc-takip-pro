@@ -1,5 +1,5 @@
 {
   "appId": "com.borctakippro.app",
   "appName": "Borç Takip Pro",
-  "webDir": "."
+  "webDir": "www"
 }

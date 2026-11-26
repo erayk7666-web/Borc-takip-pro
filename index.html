@@ -34,7 +34,8 @@
 <div id="modal" class="overlay"><div class="modal"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
 <div id="toast" class="toast"></div>
 <div id="lock" class="lock"><div class="lockCard"><div style="font-size:48px">🔐</div><h2>Borç Takip Pro</h2><p>Uygulamanın kilidini açmak için PIN gir.</p><input id="lockPin" type="password" inputmode="numeric" maxlength="8" onkeydown="if(event.key==='Enter')unlock()"><button class="primary" onclick="unlock()">Kilidi Aç</button><div id="lockMsg" style="color:#fca5a5;margin-top:10px"></div></div></div>
-<script>
+<script src="language.js"></script>
+  <script>
 const KEY='borcTakipPro_v4';
 const OLD_KEYS=['borcTakipPro_v3','borcTakipPro_v2','borcTakipPro'];
 const DEFAULT={debts:[],payments:[],settings:{dark:false,notifications:false,autoBackup:true,pinHash:'',reminderDays:1}};
